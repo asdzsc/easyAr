@@ -1,0 +1,55 @@
+<view>
+    <view wx:if="{{currentTab==0}}">
+        <Tabs tabs="{{tabs}}" bindtabItemChange="handleBindItemTap">
+            <block wx:if="{{tabs[0].isActive}}">
+                <view class="list">
+                    <view class="item">成长勋章1</view>
+                    <view class="item">成长勋章2</view>
+                    <view class="item">成长勋章3</view>
+                    <view class="item">成长勋章4</view>
+                    <view class="item">成长勋章5</view>
+                </view>
+            </block>
+            <block wx:elif="{{tabs[1].isActive}}">
+                <view class="list">
+                    <view class="item">景点勋章1</view>
+                    <view class="item">景点勋章2</view>
+                    <view class="item">景点勋章3</view>
+                    <view class="item">景点勋章4</view>
+                    <view class="item">景点勋章5</view>
+                </view>
+            </block>
+        </Tabs>
+    </view>
+    <view wx:else>
+        <view class="img-wrap">
+            <image wx:for="{{slider}}" wx:key="index" data-index="{{index}}"   class="item-img" src="{{item.picUrl}}" bind:tap="handleDownload" mode="widthFix" lazy-load="true" binderror="" bindload="" />
+        </view>
+        <!-- <view id="content" wx:else>
+            <view class="recommend">
+                <view class="swiper-container">
+                    <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" circular="{{circular}}" bindchange="swiperChange" class="swiper">
+                        <block wx:for="{{slider}}" wx:key="unique">
+                            <swiper-item data-id="{{item.id}}"  class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvents" id="{{index}}">
+                                <image src="{{item.picUrl}}" data-src="{{item.picUrl}}" class="img" bind:tap="handleDownload"></image>   
+                            </swiper-item>
+                        </block>
+                    </swiper>
+                    <view class="dots">
+                        <swiper autoplay="1000" interval="5000" display-multiple-items="3" duration="500" current="{{dotsCurrent}}" circular="{{circular}}" bindchange="dotsChange">
+                            <block wx:for="{{slider}}" wx:key="unique">
+                                <swiper-item data-id="{{item.id}}" class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}">
+                                    <image src="{{item.picUrl}}" class="imgs"></image>
+                                </swiper-item>
+                            </block>
+                        </swiper>
+                    </view>
+                </view>
+            </view> 
+        </view> -->
+    </view>
+    <view class="tab-btn">
+        <view class=" {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">勋章</view>
+        <view class=" {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">相册</view>
+    </view>
+</view>

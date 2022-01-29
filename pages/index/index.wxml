@@ -1,0 +1,58 @@
+<view>
+    <view class="progress-box" wx:if="{{showProgress}}">
+        <view class="index_swiper">
+            <swiper indicator-dots autoplay interval="3000" circular>
+                <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+                    <image src="{{item.image_src}}" mode="widthFix" lazy-load="true" />
+                </swiper-item>
+            </swiper>
+        </view>
+        <progress percent="100" show-info color="#10AEFF" active duration="10" bindactiveend="handleStart" stroke-width="3" />
+    </view>
+    <view wx:else class="index-content">
+        <!-- 用户头像 -->
+        <view class="user_info_wrap" wx:if="{{hasUserInfo}}">
+            <view class="user_img_wrap" bind:tap="handleToMedal">
+                <block  class="user">
+                    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+                </block>
+            </view>
+            <view bind:tap="handleCode">扫一扫</view>
+        </view>
+        <!-- 用户信息 -->
+        <view class="index-tab">
+            <text>地图</text>
+            <text bindtap="handleOpenTask">任务</text>
+        </view>
+        <view class="index_swiper">
+            <swiper indicator-dots autoplay interval="3000" circular>
+                <swiper-item wx:for="{{swiperList}}" wx:key="unique">
+                    <image src="{{item.image_src}}" mode="widthFix" lazy-load="true" />
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="task-list {{showTask ?'move':''}}">
+            <view class="task-title">
+                <text>任务</text>
+                <text bindtap="handleCloseTask">×</text>
+            </view>
+            <view class="task-item">
+                <view>任务1</view>
+                <view>任务2</view>
+                <view>任务3</view>
+                <view>任务4</view>
+            </view>
+        </view>
+        <view class="ar-btn">
+            <view class="btn" bind:tap="handleToSence">探索</view>
+            <image src="http://game-cdn.moxigame.cn/resource/download/9dcf28fc94e696faa44299ca8507512d.jpg" mode="widthFix" lazy-load="true"  />
+              
+        </view>
+    <button open-type="share">分享</button>
+          
+        <modal wx:if="{{showModal}}" bindcancel="modalCancel" bindconfirm='modalConfirm'>
+            当前功能需要进行授权才能操作，是否进行授权
+        </modal>
+    </view>
+</view>

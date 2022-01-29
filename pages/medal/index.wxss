@@ -1,0 +1,81 @@
+.tab-btn {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: 5vh;
+  line-height: 5vh;
+}
+.tab-btn view {
+  flex: 1;
+  height: 100%;
+}
+.tab-btn .active {
+  background: coral;
+}
+.img-wrap {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.img-wrap .item-img {
+  margin-top: 10rpx;
+  width: 200rpx;
+  height: 200rpx;
+}
+/*banner轮播 */
+.swiper-container {
+  margin-top: 23%;
+  position: relative;
+}
+.swiper-container .swiper {
+  height: 600rpx;
+  width: 100%;
+}
+image {
+  width: 100%;
+}
+.swiper-container .dots {
+  position: fixed;
+  height: 80px;
+  right: 0rpx;
+  width: 100%;
+  bottom: 30vh;
+}
+.swiper-container .dots .dot {
+  height: 65px !important;
+}
+.swiper-container .dots .dot.active .imgs {
+  width: 100% !important;
+  height: 100%;
+  margin: 0% auto;
+}
+.imgs {
+  width: 85%;
+  display: block;
+  margin: 5% auto;
+  height: 90%;
+}
+.swiper-container .dotes {
+  position: absolute;
+  right: 40rpx;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+.swiper-container .dotes .dote {
+  margin: 0 10rpx;
+  width: 28rpx;
+  height: 28rpx;
+  background: #fff;
+  border-radius: 50%;
+  transition: all 0.6s;
+  font: 300 18rpx/28rpx "microsoft yahei";
+  text-align: center;
+}
+.swiper-container .dotes .dote.actives {
+  background: #f80;
+  color: #fff;
+}

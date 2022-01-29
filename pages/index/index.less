@@ -1,0 +1,132 @@
+.index_swiper {
+    swiper {
+        width: 750rpx;
+        height: 340rpx;
+
+        image {
+            width: 100%;
+        }
+    }
+}
+
+.index-content {
+    padding: 10rpx 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 100vh;
+    .user_info_wrap {
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .user_img_wrap {
+            display: flex;
+            align-items: center;
+            .userinfo-avatar {
+                width: 100rpx;
+                height: 100rpx;
+                border-radius: 50%;
+            }
+
+            .userinfo-nickname {
+                margin-left: 10rpx;
+            }
+        }
+    
+        .user_btn {
+            border: 1rpx solid #fff;
+            color: #000;
+            font-size: 38rpx;
+            // padding: 30rpx;
+            border-radius: 10rpx;
+ 
+        }
+    }
+    .index-tab {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .task-list {
+        width: 100%;
+        overflow: hidden scroll;
+        position: absolute;
+        display: none;
+
+        .task-title {
+            display: flex;
+            justify-content: space-between;
+            background: skyblue;
+            align-items: center;
+            height: 50rpx;
+            color: #fff;
+        }
+
+        .task-item {
+            overflow: auto;
+            height: 30vh;
+        }
+    }
+
+    .move {
+        display: block;
+        height: 70vh;
+        overflow: hidden scroll;
+        position: absolute;
+        top: 0;
+        z-index: 88;
+        padding-top: 30vh;
+        background: rgba(0, 0, 0, 0.5);
+        animation: mymove 1s 1;
+    }
+
+    .ar-btn {
+        margin: 30rpx 0;
+        width: 200rpx;
+        height: 200rpx;
+        position: relative;
+        z-index: 66;
+        text-align: center;
+        line-height: 200rpx;
+        .btn{
+            z-index: 66;
+            color: red;
+        }
+        image{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            animation: mRotate 5s infinite linear;
+            z-index: -1;
+        }
+    }
+
+    .map-container {
+        map {
+            height: 30vh;
+            width: 100%;
+        }
+    }
+
+    @keyframes mymove {
+        from {
+            padding-top: 120vh;
+        }
+
+        to {
+            padding-top: 30vh;
+        }
+    }
+    @keyframes mRotate{
+        0% {
+            transform: rotateX(0deg) rotateZ(0);
+        }
+        100% {
+            transform: rotateX(0deg) rotateZ(360deg);
+        }
+    }
+    
+}
+ 
